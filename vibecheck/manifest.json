@@ -1,0 +1,30 @@
+{
+  "manifest_version": 3,
+  "name": "Vibe Check",
+  "version": "1.0",
+  "description": "Predicts emotional intensity and blurs triggering content before you scroll to it.",
+  "permissions": [
+    "storage"
+  ],
+  "host_permissions": [
+    "https://generativelanguage.googleapis.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "css": [
+        "styles.css"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "all_frames": true
+    }
+  ]
+}
